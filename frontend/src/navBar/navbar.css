@@ -1,0 +1,71 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #12222b;
+    color: white;
+    position: sticky;
+    top: 0;
+    height:10rem;
+    z-index: 1000; /* Ensures it stays above other elements */
+    /* background-color: #fff; Optional: adjust to match your design */
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  */
+    width: 100%;
+  }
+  
+  .logo h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #ecf0f1;
+  }
+  
+  .search-bar {
+    flex-grow: 1;
+    text-align: center;
+    background-color: grey;
+  }
+  
+  .search-bar input {
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: grey;
+    border: none;
+  }
+  
+  .profile-icon {
+    height:12rem;
+    width:12rem;
+  }
+  
+  .profile-icon i {
+    color: #ecf0f1;
+  }
+  
+  /* Optional: Add a hover effect */
+  .profile-icon:hover i {
+    color: hsl(204, 70%, 53%);
+  }
+  button{
+    
+    background-color: white;
+    color:black;
+  }
+  /* navbar.css */
+/* .navbar { */
+  /* position: sticky;
+  top: 0;
+  height:10rem; */
+  /* z-index: 1000; Ensures it stays above other elements */
+  /* background-color: #fff; /* Optional: adjust to match your design */
+  /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  */
+  /* width: 100%;  */
+/* } */ 

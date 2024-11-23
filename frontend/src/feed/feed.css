@@ -1,0 +1,109 @@
+/* Feed.css */
+
+.feed-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    /* overflow-y: auto; */
+    max-height: 400px;
+  }
+  
+  .post-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-card p {
+    margin: 5px 0;
+  }
+  
+  .post-card small {
+    color: #888;
+    font-size: 0.9em;
+  }
+/* Feed.css */
+
+.feed-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  
+  border-radius: 8px;
+ 
+}
+
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.heart-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray; /* Default color when not liked */
+  transition: color 0.3s ease;
+}
+
+.heart-button.liked {
+  color: red; /* Color when liked */
+}
+
+
+.post-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.post-card p {
+  color: #555;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.post-card small {
+  color: #999;
+  font-size: 12px;
+}
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+  

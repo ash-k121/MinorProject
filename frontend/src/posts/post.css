@@ -1,0 +1,36 @@
+*
+{
+margin-left:none;
+}
+.profile-container {
+    display: flex;
+    margin:0;
+    flex-direction: row; /* By default, children will be side-by-side */
+    height: 100vh; /* Ensures the container takes up full height of the viewport */
+    margin: none !important;
+    padding:none !important;
+}
+
+  
+  .left-section {
+    flex: 0 0 100%; /* Left section takes 35% of the container */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .right-section {
+    flex: 0 0 80%; /* Right section takes 65% of the container */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column; /* Stacks the sections vertically */
+    }
+  
+    .left-section, .right-section {
+      flex: 0 0 100%; /* Each section takes up full width on smaller screens */
+    }
+  }
+  

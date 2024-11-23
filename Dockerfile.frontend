@@ -1,0 +1,6 @@
+FROM node:lts
+WORKDIR /app
+COPY frontend/package*.json ./
+COPY frontend/ ./
+EXPOSE 5173
+CMD ["npx", "serve", "-s", "dist", "-l", "5173"]

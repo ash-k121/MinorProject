@@ -9,6 +9,11 @@ const Like=require('./schema/likesSchema')
 const app = express();
 const port = 5170;
 
+app.use(cors(
+  {
+    origin: 'http://localhost:5173',
+  }
+))
 app.use(cors()); // Enable CORS for cross-origin requests
 app.use(express.json()); // Middleware to parse JSON requests
 app.use(express.static(path.join(__dirname, 'frontend'))); // Serve static files

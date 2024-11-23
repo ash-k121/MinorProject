@@ -1,0 +1,6 @@
+FROM node:lts
+WORKDIR /app
+COPY backend/package*.json ./
+COPY backend/ ./
+EXPOSE 5170
+CMD ["npm", "start"]

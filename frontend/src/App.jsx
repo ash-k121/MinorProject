@@ -8,15 +8,13 @@ import LoadingPage from './loadingPage/loadingPage.jsx';
 import Followers from './addtionalPages/followers.jsx';
 function App() {
   return (
-    <Router>
-      <Routes>
+        <Routes>
         <Route path="/" element={<LoginButton/>}/>
         <Route path="/load" element={<LoadingPage/>}/>
         <Route path="/main" element={<Landing />} /> 
         <Route path="/profile" element={<Profile />} /> 
         <Route path="/followers" element={<Followers/>}/>
       </Routes>
-    </Router>
   );
 }
 

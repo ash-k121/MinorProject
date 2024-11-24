@@ -13,15 +13,20 @@ jobs:
     runs-on: ubuntu-latest  # or another operating system if you prefer
 
     steps:
-    # Checkout code
+    # Checkout the code
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Set up JDK (required for running SonarScanner)
-    - name: Set up JDK 11
-      uses: actions/setup-java@v3
+    # Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-        java-version: '11'
+        node-version: '16'  # You can use any version of Node.js that fits your project
+
+    # Install dependencies
+    - name: Install dependencies
+      run: |
+        npm install
 
     # Install SonarScanner
     - name: Install SonarScanner

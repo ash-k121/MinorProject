@@ -11,7 +11,7 @@ export default function Followers() {
     const fetchFollowers = async () => {
       if (isAuthenticated && user) {
         try {
-          const userResponse = await axios.get('http://localhost:5170/getfollowers', {
+          const userResponse = await axios.get('https://project-social-media-backend.onrender.com/getfollowers', {
             params: { email: user.email } // Send email as a query parameter
           });
           console.log(userResponse);

@@ -13,7 +13,7 @@ const UserSearch = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:5170/search`, {
+      const response = await axios.get(`https://project-social-media-backend.onrender.com/search`, {
         params: { username: query },
       });
       setResults(response.data);

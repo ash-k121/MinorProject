@@ -11,12 +11,12 @@ const Feed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(`http://localhost:5170/feed/${user.email}`);
+        const response = await axios.get(`https://project-social-media-backend.onrender.com/feed/${user.email}`);
         setPosts(response.data);
 
         // Check if each post is liked by the current user
         response.data.forEach(async (post) => {
-          const res = await axios.get(`http://localhost:5170/like`, {
+          const res = await axios.get(`https://project-social-media-backend.onrender.com/like`, {
             params: { postId: post._id, userEmail: user.email },
           });
           setLikedPosts((prev) => ({ ...prev, [post._id]: res.data.liked }));
@@ -33,7 +33,7 @@ const Feed = () => {
     const isLiked = likedPosts[postId];
   
     try {
-      const url = `http://localhost:5170/like${isLiked ? "/unlike" : ""}`;
+      const url = `https://project-social-media-backend.onrender.com/like${isLiked ? "/unlike" : ""}`;
       const method = isLiked ? "delete" : "post";
   
       await axios({

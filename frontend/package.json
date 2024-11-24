@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "http:localhost:5170",
+  "proxy": "https://project-social-media-backend.onrender.com/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

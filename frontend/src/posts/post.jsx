@@ -14,7 +14,7 @@ export default function Post() {
     const fetchUserData = async () => {
       if (isAuthenticated && user) {
         try {
-          const userResponse = await axios.post("http://localhost:5170/api/users/check", {
+          const userResponse = await axios.post("https://project-social-media-backend.onrender.com/api/users/check", {
             email: user.email
           });
 
@@ -24,7 +24,7 @@ export default function Post() {
 
           if (!Array.isArray(followed) || followed.length === 0) {
             try {
-              const suggestedResponse = await axios.get("http://localhost:5170/suggest-users");
+              const suggestedResponse = await axios.get("https://project-social-media-backend.onrender.com/suggest-users");
               setSuggestedUsers(suggestedResponse.data);
             } catch (suggestedError) {
               console.error("Error fetching suggested users:", suggestedError);
@@ -47,7 +47,7 @@ export default function Post() {
     const followerUserId = userData._id;
 
     try {
-      await axios.post("http://localhost:5170/follow", {
+      await axios.post("https://project-social-media-backend.onrender.com/follow", {
         follower_user_id: followerUserId,
         followed_user_id: userId,
       });
@@ -75,7 +75,7 @@ export default function Post() {
     const followerUserId = userData._id;
 
     try {
-      await axios.post("http://localhost:5170/unfollow", {
+      await axios.post("https://project-social-media-backend.onrender.com/unfollow", {
         follower_user_id: followerUserId,
         followed_user_id: userId,
       });

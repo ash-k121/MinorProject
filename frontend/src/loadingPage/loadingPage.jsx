@@ -16,7 +16,7 @@ const LoadingPage = () => {
           if (isAuthenticated && user) {
             console.log("sending")
           // Check or create user in the backend
-          await axios.post("http://localhost:5170/load", {
+          await axios.post("https://project-social-media-backend.onrender.com/load", {
             email: user.email,
             username: user.nickname,
             profilePicture: user.picture,

@@ -20,7 +20,7 @@ const Profile = () => {
     const fetchUserData = async () => {
       if (isAuthenticated && user) {
         try {
-          const userResponse = await axios.post("http://localhost:5170/api/users/check", {
+          const userResponse = await axios.post("https://project-social-media-backend.onrender.com/api/users/check", {
             email: user.email,
             name: user.name,
             picture: user.picture,
@@ -28,7 +28,7 @@ const Profile = () => {
           setUserData(userResponse.data);
           setBio(userResponse.data.bio);
 
-          const postsResponse = await axios.get(`http://localhost:5170/api/posts/user/${userResponse.data._id}`);
+          const postsResponse = await axios.get(`https://project-social-media-backend.onrender.com/api/posts/user/${userResponse.data._id}`);
           setPosts(postsResponse.data);
         } catch (error) {
           console.error("Error fetching user data:", error);
@@ -44,7 +44,7 @@ const Profile = () => {
       return;
     }
     try {
-      await axios.put(`http://localhost:5170/api/users/${userData._id}/update-bio`, { bio });
+      await axios.put(`https://project-social-media-backend.onrender.com/api/users/${userData._id}/update-bio`, { bio });
       setBioUpdateStatus("Bio updated successfully!");
     } catch (error) {
       console.error("Error updating bio:", error);
@@ -60,7 +60,7 @@ const Profile = () => {
         content: newPostContent,
         visibility,
       };
-      const response = await axios.post("http://localhost:5170/api/posts/create", newPost);
+      const response = await axios.post("https://project-social-media-backend.onrender.com/api/posts/create", newPost);
       setPosts([response.data, ...posts]);
       setNewPostContent("");
     } catch (error) {
@@ -74,7 +74,7 @@ const Profile = () => {
 
   const handleUpdatePost = async () => {
     try {
-      const response = await axios.put(`http://localhost:5170/edit/${editPost._id}`, {
+      const response = await axios.put(`https://project-social-media-backend.onrender.com/edit/${editPost._id}`, {
         content: editPost.content,
         visibility: editPost.visibility,
       });
@@ -88,7 +88,7 @@ const Profile = () => {
   const handleDeletePost = async (postId) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
-        await axios.delete(`http://localhost:5170/delete/${postId}`);
+        await axios.delete(`https://project-social-media-backend.onrender.com/delete/${postId}`);
         setPosts(posts.filter(post => post._id !== postId));
       } catch (error) {
         console.error("Error deleting post:", error);

@@ -10,8 +10,8 @@ import "@auth0/auth0-react"
 
 root.render(
   <Auth0Provider
-      domain="dev-ilhedbbhmkji2rij.us.auth0.com"
-      clientId="11wnPlIvbKLr9cdBEvquzujkLcHVjknZ"
+      domain="dev-perjd43g0mocf8kq.us.auth0.com"
+      clientId="OPggU4gGmFrUUT1xnFdogIZdKMRtE0VK"
       authorizationParams={{
         redirect_uri: window.location.origin
       }}

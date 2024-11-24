@@ -7,7 +7,7 @@ const Post= require("./schema/postSchema");
 const Follower = require('./schema/followersSchema'); 
 const Like=require('./schema/likesSchema')
 const app = express();
-const port = 5170;
+const port = process.env.PORT;
 
 app.use(cors(
   {

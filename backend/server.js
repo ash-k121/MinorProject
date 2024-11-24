@@ -7,11 +7,11 @@ const Post= require("./schema/postSchema");
 const Follower = require('./schema/followersSchema'); 
 const Like=require('./schema/likesSchema')
 const app = express();
-const port = 5170;
+const port = process.env.PORT;
 
 app.use(cors(
   {
-    origin: 'http://localhost:5173',
+    origin: 'https://project-social-media.onrender.com/',
   }
 ))
 app.use(cors()); // Enable CORS for cross-origin requests

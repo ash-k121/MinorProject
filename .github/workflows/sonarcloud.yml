@@ -1,50 +1,34 @@
-name: SonarCloud Scan
+name: SonarQube Analysis
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # or your default branch
 
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
-
     steps:
+      # Step 1: Check out your code
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+      
+      # Step 2: Install SonarScanner
+      - name: Install SonarScanner
+        run: |
+          curl -sSLo sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
+          unzip sonar-scanner-cli.zip
+          export PATH=$PATH:$(pwd)/sonar-scanner-4.7.0.2747-linux/bin
+          echo "SonarScanner installed"
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # Adjust the Node.js version as needed
-
-      - name: Cache Node.js dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node
-
-      - name: Install dependencies (Backend)
-        working-directory: ./backend  # Specify the path to your backend directory
-        run: npm install --force
-
-      - name: Install dependencies (Frontend)
-        working-directory: ./frontend  # Specify the path to your frontend directory
-        run: npm install --force
-
-      - name: Run SonarCloud Analysis
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      # Step 3: Run SonarScanner
+      - name: Run SonarScanner
         run: |
           sonar-scanner \
             -Dsonar.projectKey=your_project_key \
             -Dsonar.organization=your_organization_key \
             -Dsonar.sources=frontend,backend \
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=$SONAR_TOKEN
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

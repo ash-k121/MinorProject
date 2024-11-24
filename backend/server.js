@@ -11,7 +11,7 @@ const port = process.env.PORT;
 
 app.use(cors(
   {
-    origin: 'https://project-social-media.onrender.com/',
+    origin: 'https://project-social-media.onrender.com',
   }
 ))
 app.use(cors()); // Enable CORS for cross-origin requests

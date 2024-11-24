@@ -19,8 +19,8 @@ app.use(express.json()); // Middleware to parse JSON requests
 app.use(express.static(path.join(__dirname, 'frontend'))); // Serve static files
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/socialMedia')
-  .then(() => console.log('Connected to MongoDB!'))
+mongoose.connect('mongodb+srv://ashintern121:wMsTvDM4sRuir0j7@cluster0.30apc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+  .then(() => console.log('Connected to MongoDB compass!'))
   .catch(err => console.error("Could not connect to MongoDB:", err));
 
 // Fetch users and send as an array

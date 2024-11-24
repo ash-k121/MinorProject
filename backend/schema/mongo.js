@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 const { faker } = require('@faker-js/faker'); // Using the @faker-js/faker package
 
 // Connect to MongoDB (local MongoDB instance)
-mongoose.connect('mongodb://127.0.0.1:27017/socialMedia', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect('mongodb+srv://ashintern121:wMsTvDM4sRuir0j7@cluster0.30apc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+  .then(() => console.log('Connected to MongoDB compass!'))
+  .catch(err => console.error("Could not connect to MongoDB:", err));
 
 // Import your schema (schemas)
 const User = require('./userSchema'); // Assuming the schema files are in the same folder

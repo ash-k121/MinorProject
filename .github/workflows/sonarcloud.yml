@@ -3,42 +3,30 @@ name: SonarCloud Analysis
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
   pull_request:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   sonarcloud:
+    name: SonarCloud Analysis
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'  # Change to your required Node.js version
+      - name: Install dependencies
+        run: npm install
 
-    - name: Install dependencies
-      run: |
-        npm install
-
-    - name: Install SonarScanner
-      run: |
-        curl -sSLo /tmp/sonar-scanner.zip https://binaries.sonarsource.com/Commercial/sonar-scanner-cli-4.9.0.3292-linux.zip
-        unzip /tmp/sonar-scanner.zip -d /tmp
-        export PATH=$PATH:/tmp/sonar-scanner-4.9.0.3292-linux/bin
-        sonar-scanner --version  # Verify the installation
-
-    - name: Run SonarCloud analysis
-      run: |
-        sonar-scanner \
-          -Dsonar.projectKey=your_project_key \
-          -Dsonar.organization=your_organization_key \
-          -Dsonar.sources=frontend,backend \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          args: >
+            -Dsonar.organization=your_organization_key
+            -Dsonar.projectKey=your_project_key
+            -Dsonar.sources=.
+            -Dsonar.host.url=https://sonarcloud.io
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

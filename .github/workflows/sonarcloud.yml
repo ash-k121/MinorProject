@@ -1,4 +1,4 @@
-name: SonarCloud Scan
+name: SonarCloud Analysis
 
 on:
   push:
@@ -10,41 +10,23 @@ on:
 
 jobs:
   sonarcloud:
+    name: SonarCloud Analysis
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: npm install
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
         with:
-          node-version: '16'  # Adjust the Node.js version as needed
-
-      - name: Cache Node.js dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node
-
-      - name: Install dependencies (Backend)
-        working-directory: ./backend  # Specify the path to your backend directory
-        run: npm install --force
-
-      - name: Install dependencies (Frontend)
-        working-directory: ./frontend  # Specify the path to your frontend directory
-        run: npm install --force
-
-      - name: Run SonarCloud Analysis
+          args: >
+            -Dsonar.organization=ash-k121
+            -Dsonar.projectKey=ash-k121_MinorProject
+            -Dsonar.sources=.
+            -Dsonar.host.url=https://sonarcloud.io
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: |
-          sonar-scanner \
-            -Dsonar.projectKey=your_project_key \
-            -Dsonar.organization=your_organization_key \
-            -Dsonar.sources=frontend,backend \
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}

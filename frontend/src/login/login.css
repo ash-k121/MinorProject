@@ -1,90 +1,160 @@
-/* LoginPage.css */
 .login-page {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  .login-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f9fa;
-    padding: 2rem;
+  100% {
+    opacity: 1;
   }
-  
-  .login-left h2 {
-    font-size: 2rem;
-    color: #1e2a78;
+}
+
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
   }
-  
-  .login-left p {
-    font-size: 1.2rem;
-    color: #1e2a78;
-    margin-bottom: 2rem;
+  100% {
+    transform: translateX(0);
   }
-  
-  .login-left form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
+}
+
+.login-left h2 {
+  font-size: 2.5rem;
+  color: #1e2a78;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.welcome-text {
+  position: relative;
+  animation: textPop 2s ease-in-out forwards;
+}
+
+@keyframes textPop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  
-  .login-left input {
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .login-left button {
-    padding: 0.8rem;
-    margin-top: 1rem;
-    background-color: #007bff;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+}
+
+.animated-logo {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  
-  .login-left button:hover {
-    background-color: #0056b3;
+  40% {
+    transform: translateY(-10px);
   }
-  
-  .login-left a {
-    color: #007bff;
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.9rem;
+  60% {
+    transform: translateY(-5px);
   }
-  
-  .login-right {
-    flex: 1.5;
-    background: linear-gradient(to bottom, #6a11cb, #2575fc);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.login-left p {
+  font-size: 1.2rem;
+  color: #1e2a78;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInText 2.5s ease-in forwards;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
   }
-  
-  .login-right img {
-    width: 80%;
-    max-width: 500px;
+  100% {
+    opacity: 1;
   }
-  img {
-    width: 100%;  /* Adjust the width as per your requirement, for example, 100% of the container */
-    height: auto;  /* Maintain aspect ratio */
-    max-width: 100%;  /* Ensure it doesn't exceed the container's width */
-    display: block;  /* Remove any inline spacing */
-    object-fit: contain;  /* Ensure the entire image fits within the set dimensions without distorting */
+}
+
+.login-left button {
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.login-left button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.login-right {
+  flex: 1.5;
+  background: linear-gradient(to bottom, #b788e9, #a1bdef);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.logo-image {
+  height: 10rem;
+  width: 10rem;
+  padding-left: 4rem;
+  background-size: cover;
+}.typing-text {
+  font-size: 2.5rem;
+  color: #1e2a78;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #1e2a78; /* Cursor effect */
+  animation: typing 3s steps(20, end) infinite, blink 0.7s step-end infinite;
+  display: inline-block;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
   }
-    
-  .logo-image
-  {
-    height:10rem;
-    width:10rem;
-    padding-left: 4rem;
-    background-size: cover;
+  50% {
+    width: 18ch; /* Full width of the text */
   }
+  100% {
+    width: 0; /* Reset to start */
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #1e2a78;
+  }
+}

@@ -1,16 +1,19 @@
 /* General Container Styling */
-.profile-container {
+.profile-containe {
+  /* all:unset; */
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: none !important;
   font-family: 'Roboto', Arial, sans-serif;
   color: #333;
-  background: #F1E6FF; /* Light lavender background */
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
+  background-color:#D4EBF8;
+  display: flex !important; 
+  flex-direction: column !important;
   gap: 30px; /* Space between sections */
+  overflow: auto; /* To ensure content is scrollable if it overflows */
+  height: auto; /* Ensure content does not overflow */
 }
 
 /* Profile Header */
@@ -58,7 +61,7 @@ textarea {
 /* Buttons Styling */
 button {
   padding: 12px 20px;
-  background: linear-gradient(145deg, #F0C1E1, #FF6A88); /* Gradient from #F0C1E1 (soft pink) to vibrant pink */
+  /* background: linear-gradient(145deg, #F0C1E1, #FF6A88); Gradient from #F0C1E1 (soft pink) to vibrant pink */
   color: white;
   border: none;
   border-radius: 25px;
@@ -80,29 +83,31 @@ button:active {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow when clicked */
 }
 
-
 /* New Post Section */
 .new-post-section {
-  padding: 20px;
+  max-width:70rem;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  padding: 3rem;
 }
 
-.new-post-section textarea {
-  width: 100%;
+.new-post-section  form textarea {
+  max-width: 45rem !important;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #D1E7E1; /* Light mint border */
   resize: none;
+  /* margin-right: em !important; */
   margin-bottom: 10px;
   background-color: #F9FBF9; /* Off-white pastel background */
 }
 
 .new-post-section button {
   width: 100%;
-  background-color: #0095f6; /* Keeping the original blue color for post button */
-  color: white;
+  background-color: #D0E8C5!important; /* Keeping the original blue color for post button */
+  color: rgb(0, 0, 0)!important;
   font-weight: 600;
   padding: 12px 20px;
   border-radius: 25px;
@@ -115,6 +120,7 @@ button:active {
   gap: 20px;
   background: white;
   padding: 20px;
+  margin: 2rem;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -150,20 +156,29 @@ button:active {
   margin: 20px auto;
   text-align: center;
   font-size: 16px;
-  color: #0095f6; /* Blue color for logout button */
+  color: #ffffff; /* White color for text */
+  background-color: #F9FBF9; /* Blue background */
   font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 25px;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .logout-button:hover {
-  color: #007bb5; /* Darker blue on hover */
-  text-decoration: underline;
+  color: #ffffff; /* Keep text white */
+  background-color: #007bb5; /* Darker blue on hover */
+  text-decoration: none;
+}
+
+.logout-button:focus {
+  outline: none;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .profile-container {
+  .profile-containe
+  {
     padding: 15px;
   }
 
@@ -179,4 +194,135 @@ button:active {
     flex-direction: column;
     text-align: center;
   }
+}
+button {
+  padding: 8px 12px;
+  background:#D0E8C5;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width:10rem;
+  margin: 1rem;
+  align-self: center;
+}
+.new-post-section button{
+  padding: 8px 12px;
+  background-color: #D0E8C5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width:10rem;
+  
+
+}
+select option{
+  border-radius: 1rem;
+}
+/* New Post Section */
+/* .new-post-section {
+  padding: 20px;
+  background-color: #ffffff; /* White background */
+  /* border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+} */
+
+.new-post-section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #3C3C3C; /* Darker color for heading */
+  text-align: center;
+}
+
+.new-post-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.new-post-section textarea {
+  width: 50rem !important;
+  align-self: center;
+  padding: none !important;
+  border-radius: 10px;
+  border: 1px solid #D1E7E1; /* Light mint border */
+  resize: none;
+  margin-bottom: 10px;
+  background-color: #F9FBF9; /* Off-white pastel background */
+  font-size: 16px;
+  color: #333; /* Dark text */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.new-post-section textarea:focus {
+  border-color: #0095f6; /* Blue border on focus */
+}
+
+.new-post-section select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #D1E7E1;
+  background-color: #F9FBF9;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+
+
+.new-post-section button {
+  align-self: center;
+  margin:none;
+    padding: none !important;
+    background-color: #AA5486;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  
+  
+}
+
+.new-post-section button:hover {
+  background: linear-gradient(145deg, #7567a5, #F0C1E1); /* Inverted gradient on hover */
+  transform: translateY(-4px); /* Slight lift effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth on hover */
+}
+
+.new-post-section button:active {
+  transform: translateY(1px); /* Slight push down on click */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow when clicked */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .new-post-section {
+    padding: 15px;
+  }
+
+  .new-post-section h3 {
+    font-size: 20px;
+  }
+
+  .new-post-section textarea {
+    font-size: 14px;
+  }
+
+  .new-post-section select {
+    font-size: 14px;
+  }
+}
+.posts-grid button{
+margin :1rem;
+}
+.post-content{
+  width:20rem;
+  padding:none !important;
 }

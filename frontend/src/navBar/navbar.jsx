@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import { useAuth0 } from "@auth0/auth0-react";
 import UserSearch from '../addtionalPages/searchBar';
-import profile from '../assets/default-profile-pic.png'
+import profile from '../assets/default-profile-pic-DgcXNjnz.png'
 import './navbar.css'
 const Navbar = () => {
   const { loginWithRedirect, user, isAuthenticated } = useAuth0();

@@ -101,7 +101,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="profile-container">
+    <div className="profile-containe">
       <div className="profile-header">
         <div className="profile-image">
           {user.picture ? (
@@ -124,6 +124,7 @@ const Profile = () => {
         <form onSubmit={handlePostSubmit}>
           <textarea
             value={newPostContent}
+            className="post-content"
             onChange={(e) => setNewPostContent(e.target.value)}
             placeholder="What's on your mind?"
             required
@@ -132,7 +133,7 @@ const Profile = () => {
             <option value="friends">Friends</option>
             <option value="public">Public</option>
           </select>
-          <button type="submit">Post</button>
+          <button type="submit" >Post</button>
         </form>
       </div>
 
@@ -144,7 +145,7 @@ const Profile = () => {
               <h4>{post.content}</h4>
               <p>Visibility: {post.visibility}</p>
               <p>Posted on: {new Date(post.created_at).toLocaleString()}</p>
-              <button onClick={() => handleEditPost(post)}>Edit</button>
+              <button onClick={() => handleEditPost(post) }>Edit</button>
               <button onClick={() => handleDeletePost(post._id)}>Delete</button>
             </div>
           ))}
@@ -173,7 +174,7 @@ const Profile = () => {
         </div>
       )}
 
-      <LogoutButton />
+       <LogoutButton />
     </div>
   );
 };

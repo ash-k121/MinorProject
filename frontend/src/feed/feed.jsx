@@ -55,28 +55,29 @@ const Feed = () => {
 
   return (
     <div className="feed-container">
-      <h2>Feed</h2>
-      {posts.map((post) => (
-        <div key={post._id} className="post-card">
-          <div className="post-header">
-            <img
-              src={post.user_id?.profilePicture || "/default-profile-pic.png"}
-              alt="Profile"
-              className="profile-icon"
-            />
-            <span className="username">{post.user_id?.username || "Unknown"}</span>
-          </div>
-          <p>{post.content}</p>
-          <p><small>{new Date(post.created_at).toLocaleString()}</small></p>
-          <button
-            className={`heart-button ${likedPosts[post._id] ? "liked" : ""}`}
-            onClick={() => toggleLike(post._id)}
-          >
-            ♥
-          </button>
+    <h2>Feed</h2>
+    {posts.map((post) => (
+      <div key={post._id} className="post-card">
+        <div className="post-header">
+          <img
+            src={post.user_id?.profilePicture || "/default-profile-pic.png"}
+            alt="Profile"
+            className="profile-icon"
+          />
+          <span className="username">{post.user_id?.username || "Unknown"}</span>
         </div>
-      ))}
-    </div>
+        <p>{post.content}</p>
+        <small>{new Date(post.created_at).toLocaleString()}</small>
+        <button
+          className={`heart-button ${likedPosts[post._id] ? "liked" : ""}`}
+          onClick={() => toggleLike(post._id)}
+        >
+          ♥
+        </button>
+      </div>
+    ))}
+  </div>
+  
   );
 };
 

@@ -1,36 +1,111 @@
-*
-{
-margin-left:none;
-}
+/* Profile Container */
 .profile-container {
-    display: flex;
-    margin:0;
-    flex-direction: row; /* By default, children will be side-by-side */
-    height: 100vh; /* Ensures the container takes up full height of the viewport */
-    margin: none !important;
-    padding:none !important;
+  display: flex !important; /* Enable flexbox */
+  flex-direction: row !important; /* Arrange items in a row */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  width: 100vw !important; /* Ensure container spans the entire viewport */
+  margin: 0 !important; /* Remove margin */
+  height: 100vh; /* Full height of the viewport */
+  gap: 20px; /* Space between sections */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  background-color: #D4EBF8;
+  overflow: hidden; /* Prevent overflow issues */
 }
 
-  
-  .left-section {
-    flex: 0 0 100%; /* Left section takes 35% of the container */
-    padding: 20px;
-    box-sizing: border-box;
+/* Left Section */
+.left-section {
+  flex: 1; /* Take 1 part of available space */
+  background-color: #D4EBF8;
+  padding: 20px 4rem; /* Consistent padding on all sides */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  border-radius: 8px;
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  height: calc(100vh - 40px); /* Ensure it adjusts within the viewport */
+}
+
+/* Right Section */
+.right-section {
+  flex: 3; /* Take 3 parts of available space */
+  background-color: #D4EBF8;
+  height: calc(100vh - 40px); /* Adjust height within the viewport */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  overflow-y: auto; /* Enable vertical scrolling for feed content */
+}
+
+/* Feed Item Styling */
+.feed-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Space between feed items */
+}
+
+/* Followed and Suggested Users Section */
+.followed-users-section,
+.suggested-users-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.followed-users-section h3,
+.suggested-users-section h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.followed-users-section div,
+.suggested-users-section div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.followed-users-section div:last-child,
+.suggested-users-section div:last-child {
+  border-bottom: none;
+}
+
+/* Button Styling */
+button {
+  padding: 8px 12px;
+  background-color: #D0E8C5;
+  color: #333; /* Darker text color for better contrast */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+button:hover {
+  background-color: #b4d6a8; /* Softer hover color */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.followed-users-section button,
+.suggested-users-section button {
+  margin-left: 2rem;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column; /* Stack sections vertically */
+    height: auto; /* Adjust height for stacked layout */
   }
-  
+
+  .left-section,
   .right-section {
-    flex: 0 0 80%; /* Right section takes 65% of the container */
+    width: 100%; /* Take full width of the viewport */
+    height: auto; /* Adjust height to fit content */
+    flex: none; /* Reset flex properties */
     padding: 20px;
-    box-sizing: border-box;
   }
-  
-  @media (max-width: 768px) {
-    .profile-container {
-      flex-direction: column; /* Stacks the sections vertically */
-    }
-  
-    .left-section, .right-section {
-      flex: 0 0 100%; /* Each section takes up full width on smaller screens */
-    }
-  }
-  
+}

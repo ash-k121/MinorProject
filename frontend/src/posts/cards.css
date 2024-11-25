@@ -1,16 +1,19 @@
-/* src/PostCard.css */
-.post-card {
+/* cards.css */
+/* Post Card Styles */
+/* .post-card {
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 16px;
     padding: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    color: #333;
 }
 
 .profile {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .profile-photo {
@@ -23,17 +26,18 @@
 .profile-name {
     font-size: 1.2em;
     font-weight: bold;
-}
-
-.post-image {
-    width: 100%;
-    border-radius: 8px;
-    margin: 10px 0;
+    color: #333;
 }
 
 .post-info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content {
+    font-size: 16px;
+    color: #555;
 }
 
 .likes,
@@ -45,3 +49,22 @@
 .likes-icon {
     margin-right: 5px;
 }
+
+/* Hover Effects */
+/* .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #E1ACAC;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d19b9b;
+} */

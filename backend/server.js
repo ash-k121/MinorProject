@@ -42,6 +42,7 @@ app.get('/post', async (req, res) => {
     res.status(500).send(error.message);
 }
 });
+
 // app.js
 app.post("/load", async (req, res) => {
   const { email, username, profilePicture } = req.body;

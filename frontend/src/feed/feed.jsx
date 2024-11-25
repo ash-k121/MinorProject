@@ -60,7 +60,7 @@ const Feed = () => {
       <div key={post._id} className="post-card">
         <div className="post-header">
           <img
-            src={post.user_id?.profilePicture || "/default-profile-pic.png"}
+            src={post.user_id?.profilePicture || "https://randomuser.me/api/portraits/men/1.jpg"}
             alt="Profile"
             className="profile-icon"
           />

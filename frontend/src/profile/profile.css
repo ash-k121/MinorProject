@@ -220,16 +220,6 @@ button {
 select option{
   border-radius: 1rem;
 }
-/* New Post Section */
-/* .new-post-section {
-  padding: 20px;
-  background-color: #ffffff; /* White background */
-  /* border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-} */
 
 .new-post-section h3 {
   font-size: 24px;

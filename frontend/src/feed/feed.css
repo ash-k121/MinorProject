@@ -1,18 +1,18 @@
-/* Feed Container */
+
 .feed-container {
-  width: 100%; /* Take full width of the parent */
+  width: 100%; 
   max-width: 800px; /* Restrict the maximum width */
-  margin: 20px auto; /* Center the container horizontally with vertical spacing */
+  margin: 20px auto; 
   padding: 20px;
   background-color: #D4EBF8; /* Light blue background */
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  font-family: Arial, sans-serif; /* Consistent font style */
-  box-sizing: border-box; /* Include padding in width calculation */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  font-family: Arial, sans-serif; 
+  box-sizing: border-box; 
   overflow: hidden; /* Prevent both horizontal and vertical overflow */
 }
 
-/* Headings inside Feed Container */
+
 h2 {
   font-size: 24px;
   color: #333;
@@ -45,12 +45,12 @@ h2 {
 }
 
 .profile-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* Make the icon circular */
-  object-fit: cover; /* Ensure image fits the circle */
-  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 }
+
 
 .username {
   font-size: 18px;

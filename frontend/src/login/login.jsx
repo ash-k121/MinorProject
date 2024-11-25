@@ -12,11 +12,11 @@ const LoginButton = () => {
     <div className="login-page">
   <div className="login-left">
     <h2 className="typing-text">
-      Welcome to Engage 
+      Welcome to Engage !
     </h2>
     <img className="logo-image animated-logo" src={logo} alt="Logo" />
     <p>Sign into your account</p>
-    <button onClick={() => loginWithRedirect({ prompt: 'login' })}>Log In</button>
+    <button onClick={() => loginWithRedirect({ prompt: 'login' })}>Sign Up</button>
     {isAuthenticated ? navigate("/load") : null}
   </div>
   <div className="login-right">

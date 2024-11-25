@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
   },
   profilePicture: {
     type: String,
-    default: 'pic', // Default profile picture
+    default: 'https://randomuser.me/api/portraits/men/1.jpg', // Default profile picture
   },
   bio: {
     type: String,

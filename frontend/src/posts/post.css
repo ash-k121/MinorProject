@@ -85,7 +85,7 @@ button {
 }
 
 button:hover {
-  background-color: #b4d6a8; /* Softer hover color */
+  background-color: #b4d6a8; 
   transform: scale(1.05); /* Slight zoom on hover */
 }
 

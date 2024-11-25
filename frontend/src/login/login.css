@@ -2,6 +2,7 @@
   display: flex;
   height: 100vh;
   animation: fadeIn 2s ease-in-out;
+  align-self: center;
 }
 
 @keyframes fadeIn {
@@ -92,8 +93,8 @@
 .login-left button {
   padding: 0.8rem;
   margin-top: 1rem;
-  background-color: #007bff;
-  color: white;
+  background-color: #aac9ea;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
   border: none;
   border-radius: 5px;
@@ -107,12 +108,27 @@
 }
 
 .login-right {
-  flex: 1.5;
-  background: linear-gradient(to bottom, #b788e9, #a1bdef);
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(45deg, #9c52eb, #6851e8, #5a93f6, #b47cf8);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
 }
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 img {
   width: 100%;
@@ -125,7 +141,7 @@ img {
 .logo-image {
   height: 10rem;
   width: 10rem;
-  padding-left: 4rem;
+  padding-left: 2rem;
   background-size: cover;
 }.typing-text {
   font-size: 2.5rem;
